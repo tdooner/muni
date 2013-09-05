@@ -1,8 +1,6 @@
-require 'net/http'
-require 'xmlsimple'
-
 require 'muni/stop'
 require 'muni/direction'
+require 'muni/vehicle_location'
 
 module Muni
   class Route < Base
@@ -17,6 +15,12 @@ module Muni
 
     def inbound
       directions.select{ |dir| dir.name =~ /inbound/i }.first
+    end
+
+    def vehicles(options = {})
+      options.merge!(r: tag)
+
+      VehicleLocation.all(options)
     end
 
     class << self

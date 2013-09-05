@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{NextBus San Francisco Muni API Client}
   s.description = %q{A simple NextBus API client for retrieving San Francisco Muni bus route and stop prediction information}
   s.license     = 'MIT'
-  
+
   s.rubyforge_project = "muni"
 
   s.files         = `git ls-files`.split("\n")
